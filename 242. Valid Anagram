@@ -1,0 +1,37 @@
+// in java language-->
+
+class Solution {
+    public boolean isAnagram(String s, String t) {
+        char[] char1 = s.toCharArray();
+        char[] char2 = t.toCharArray();
+        Arrays.sort(char1);
+        Arrays.sort(char2);
+        String sort1 = new String(char1);
+        String sort2 = new String(char2);
+        
+        return sort1.equals(sort2);
+    }
+}
+
+
+// in python -->
+class Solution(object):
+    def isAnagram(self, s, t):
+        """
+        :type s: str
+        :type t: str
+        :rtype: bool
+        """
+        if len(s) != len(t):
+            return False
+        
+        letters1 = {}
+        letters2 = {}
+        
+        for i in range(len(s)):
+            letters1[s[i]] = letters1.get(s[i], 0) + 1
+            letters2[t[i]] = letters2.get(t[i], 0) + 1
+
+        if letters1 == letters2:
+            return True 
+        return False        
