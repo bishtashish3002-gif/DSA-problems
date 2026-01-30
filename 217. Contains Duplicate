@@ -1,0 +1,31 @@
+// this code is in python.....
+
+class Solution(object):
+    def containsDuplicate(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: bool
+        """
+        numSet = set()
+        
+        for num in nums:
+            if num in numSet:
+                return True
+            else:
+                numSet.add(num)
+        return False
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// this code is in Java....
+
+class Solution {
+    public boolean containsDuplicate(int[] nums) {
+        Arrays.sort(nums);
+        for(int i=0; i<nums.length-1; i++){
+            if(nums[i]==nums[i+1]){
+                return true;
+            }
+        }
+        return false;
+    }
+}
