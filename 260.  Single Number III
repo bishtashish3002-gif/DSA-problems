@@ -1,0 +1,19 @@
+JAVA code ----------->
+
+class Solution {
+    public int[] singleNumber(int[] nums) {
+        Arrays.sort(nums);
+        Set<Integer> s = new HashSet<>();
+        for(int n: nums){
+            if(s.contains(n)){
+                s.remove(n);
+            }else{
+                s.add(n);
+            }
+        }
+        int[] result = new int[2];
+        int i=0;
+        for(int num : s) result[i++] = num;
+        return result; 
+    }
+}
