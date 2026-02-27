@@ -1,0 +1,28 @@
+class Solution {
+    public String largestNumber(int[] nums) {
+        String[] store = new String[nums.length];
+        
+        // Convert numbers to strings
+        for(int i = 0; i < nums.length; i++){
+            store[i] = String.valueOf(nums[i]);
+        }
+
+        // Sort using custom comparator
+        Arrays.sort(store, (a, b) -> {
+            String order1 = a + b;
+            String order2 = b + a;
+            return order2.compareTo(order1);
+        });
+
+        // Handle case where all numbers are zero
+        if (store[0].equals("0")) return "0";
+
+        // Build result
+        StringBuilder ans = new StringBuilder();
+        for(String s : store){
+            ans.append(s);
+        }
+
+        return ans.toString();
+    }
+}
