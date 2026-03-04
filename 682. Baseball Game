@@ -1,0 +1,29 @@
+// its a java code
+=============================================================================================
+
+class Solution {
+    public int calPoints(String[] operations) {
+        Stack<Integer> s = new Stack<>();
+        for(String i: operations)
+        {
+            if (i.equals("C"))
+            s.pop();
+            else if(i.equals("D"))
+            s.push(s.peek()*2);
+            else if(i.equals("+"))
+            {
+                int p=s.pop();
+                int sum = p+s.peek();
+                s.push(p);
+                s.push(sum);
+            }else
+            s.push(Integer.valueOf(i));
+        }
+            int sum=0;
+            while(!s.isEmpty())
+            {
+                sum = sum +s.pop();
+            }
+            return sum; 
+    }
+}
