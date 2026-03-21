@@ -1,0 +1,15 @@
+java code
+
+===================================================================================
+class Solution {
+    public int rob(int[] nums) {
+        int prev2 =0;
+        int prev1 =0;
+        for (int currentHouseMonney : nums){
+            int currentMax = Math.max(currentHouseMonney + prev2, prev1);
+            prev2 = prev1;
+            prev1 = currentMax;
+        }
+        return prev1;
+    }
+}
