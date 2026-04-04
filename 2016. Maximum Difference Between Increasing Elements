@@ -1,0 +1,23 @@
+
+=======================================================================================
+
+brute force approach in java
+
+class Solution {
+    public int maximumDifference(int[] nums) {
+        int maxnum=0;
+        int max=0;
+        int n = nums.length;
+        for(int i =0; i<n; i++){
+           for(int j=i+1; j<n; j++){
+            max= nums[j] - nums[i];
+            if(max>maxnum){
+                maxnum = max;
+            }
+           }
+        }
+       if(maxnum==0) return -1;
+       else
+       return maxnum;
+    }
+}
