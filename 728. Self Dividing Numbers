@@ -1,0 +1,25 @@
+i try something new and create a differnt method for the solluiton instead of doing this in one
+
+======================================================================================================
+class Solution {
+    public List<Integer> selfDividingNumbers(int left, int right) {
+        List<Integer> arr = new ArrayList<>();
+        for(int i=left; i<=right; i++){
+            if(isSelfDivNum(i)){
+                arr.add(i);
+            }
+        }
+        return arr;
+    }
+public boolean isSelfDivNum(int num){
+    int temp = num;
+    while(temp>0){
+        int res = temp%10;
+        if(res==0 || num%res!=0){
+            return false;
+        }
+        temp/=10;
+    }
+    return true;
+}
+}
