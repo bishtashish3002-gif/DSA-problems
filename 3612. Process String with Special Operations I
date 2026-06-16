@@ -1,0 +1,20 @@
+class Solution {
+    public String processStr(String s) {
+       StringBuilder result = new StringBuilder();
+       for( char ch: s.toCharArray()){
+            if(ch=='*' && result.length()>=1){
+                result.deleteCharAt(result.length()-1);
+            }
+            else  if(ch == '#' && result.length()>=1){
+                String temp = result.toString();
+                result.append(temp);
+            }else if(ch== '%'){
+                result.reverse();
+            }
+            if(ch >= 'a' && ch <= 'z'){
+                result.append(ch);
+            }
+       }
+       return result.toString();
+    }
+}
