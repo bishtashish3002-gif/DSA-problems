@@ -1,0 +1,17 @@
+class Solution {
+    public char nextGreatestLetter(char[] letters, char target) {
+        char smallest = letters[0];
+        boolean flag = false;
+        for(char ch : letters){
+            if(!flag){
+                if(ch>target){
+                    smallest = ch;
+                    flag = !flag;
+                }
+            }else {
+                if(ch> target && ch< smallest) smallest = ch;
+            }
+        }
+        return smallest;
+    }
+}
