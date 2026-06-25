@@ -1,0 +1,17 @@
+class Solution {
+    public int[] shuffle(int[] nums, int n) {
+        int[] arr = new int[2*n];
+        int xpointer= 0;
+        int ypointer = n;
+        for(int k=0; k<arr.length; k++){
+            if(k%2==0){
+                arr[k]= nums[xpointer];
+                xpointer++;
+            }else{
+                arr[k]= nums[ypointer];
+                ypointer++;
+            }
+        }
+        return arr;
+    }
+}
